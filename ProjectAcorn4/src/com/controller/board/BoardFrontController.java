@@ -36,7 +36,6 @@ public class BoardFrontController extends HttpServlet {
 		
 		
 		
-		
 		BoardCommand command = null;
 		String nextPage = null;
 		//목록보기
