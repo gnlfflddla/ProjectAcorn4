@@ -6,13 +6,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript"> 
 
-<%-- <c:forEach var="x" items="${productinfoList}">
-<c:forTokens var="token" items="${x.pColor}"
-              delims=",">
-  ${token}<br> 
-</c:forTokens>
-</c:forEach> --%>
-
 
 $(document).ready(function() {
 	
@@ -32,13 +25,13 @@ $(document).ready(function() {
 	 
 	 // 장바구니 
 	 $("#cart").on("click",function(){
-			$("form").attr("action","ProductCartServlet");
+			$("form").attr("action","ProductCartAddServlet");
 
 	 });
 
 	 // 바로구매
 	 $("#buy").on("click",function(){
-			$("form").attr("action","");
+			$("form").attr("action","ProductBuyInstantServlet");
 
 	 });
 	 

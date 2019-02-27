@@ -156,7 +156,9 @@ $(document).ready(function(){
 
 	<tr>
 		<td class="td_default" align="center"><a class="a_default"
-			href="OrderListDetailServlet?mem_id=guest">주문조회 페이지로 이동</a></td>
+			href="OrderListDetailServlet?mem_id=guest">주문조회 페이지로 이동</a>
+		&nbsp;&nbsp;<a href="MainServlet">메인홈페이지</a>	
+		</td>
 	</tr>
 
 	<tr>

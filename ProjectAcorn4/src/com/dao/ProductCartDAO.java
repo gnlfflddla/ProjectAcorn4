@@ -62,4 +62,10 @@ public class ProductCartDAO {
 		int n = session.insert("ProductCartMapper.ProductOrderAllDone",x);
 		return n;
 	}
+	
+	// seqnum 가져오기
+	public int Seqnum(SqlSession session) {
+		int n = session.selectOne("ProductCartMapper.seqnum");
+		return n;
+	}
 }

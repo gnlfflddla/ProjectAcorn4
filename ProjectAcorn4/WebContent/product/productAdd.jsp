@@ -82,7 +82,7 @@ $(document).ready(function() {
 <h1 align="center">상품 등록</h1>
 <hr>
 <body>
- <form action="ProductAddServlet" method="POST" enctype="multipart/form-data">
+ <form action="../ProductAddServlet" method="POST" enctype="multipart/form-data">
 <table align="center">
 <tr> 
  <td>상품 코드 : <input type="text" name="pCode"></td>
