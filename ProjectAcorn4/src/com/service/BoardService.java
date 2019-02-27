@@ -1,11 +1,9 @@
 package com.service;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.configuration.MySqlSesstionFactory;
+import com.config.MySqlSessionFactory;
 import com.dao.BoardDAO;
 import com.dto.BoardDTO;
 import com.dto.CommentDTO;
@@ -15,7 +13,7 @@ import com.dto.PageDTO;
 public class BoardService {
 	
 	public BoardDTO boardRetrieve(String _num) {
-		SqlSession session = MySqlSesstionFactory.getSesstion();
+		SqlSession session = MySqlSessionFactory.getSession();
 		BoardDTO dto = new BoardDTO();
 		try {
 			BoardDAO dao = new BoardDAO();
@@ -28,7 +26,7 @@ public class BoardService {
 		return dto;
 	}
 	public BoardDTO boardReplyUI(String _num) {
-		SqlSession session = MySqlSesstionFactory.getSesstion();
+		SqlSession session = MySqlSessionFactory.getSession();
 		BoardDTO dto = new BoardDTO();
 		try {
 			BoardDAO dao = new BoardDAO();
@@ -40,7 +38,7 @@ public class BoardService {
 		return dto;
 	}
 	public PageDTO boardList(PageDTO pDTO) {
-		SqlSession session = MySqlSesstionFactory.getSesstion();
+		SqlSession session = MySqlSessionFactory.getSession();
 		try {
 			BoardDAO dao = new BoardDAO();
 			pDTO = dao.boardList(session,pDTO);
@@ -51,7 +49,7 @@ public class BoardService {
 		return pDTO;
 	}
 	public int boardWrite(BoardDTO dto) {
-		SqlSession session = MySqlSesstionFactory.getSesstion();
+		SqlSession session = MySqlSessionFactory.getSession();
 		int result=0;
 		try {
 			BoardDAO dao = new BoardDAO();
@@ -64,7 +62,7 @@ public class BoardService {
 		return result;
 	}
 	public int boardUpdate(BoardDTO dto) {
-		SqlSession session = MySqlSesstionFactory.getSesstion();
+		SqlSession session = MySqlSessionFactory.getSession();
 		int result=0;
 		try {
 			BoardDAO dao = new BoardDAO();
@@ -77,7 +75,7 @@ public class BoardService {
 		return result;
 	}
 	public int boardDelete(String _num) {
-		SqlSession session = MySqlSesstionFactory.getSesstion();
+		SqlSession session = MySqlSessionFactory.getSession();
 		int result=0;
 		try {
 			BoardDAO dao = new BoardDAO();
@@ -90,7 +88,7 @@ public class BoardService {
 		return result;
 	}
 	public PageDTO boardSearch(BoardDTO dto, PageDTO pDTO) {
-		SqlSession session = MySqlSesstionFactory.getSesstion();
+		SqlSession session = MySqlSessionFactory.getSession();
 		try {
 			BoardDAO dao = new BoardDAO();
 			pDTO = dao.boardSearch(session,dto,pDTO);
@@ -101,7 +99,7 @@ public class BoardService {
 		return pDTO;
 	}
 	public void boardReply(BoardDTO dto) {
-		SqlSession session = MySqlSesstionFactory.getSesstion();
+		SqlSession session = MySqlSessionFactory.getSession();
 		try {
 			BoardDAO dao = new BoardDAO();
 			dao.boardReply(session,dto);
@@ -114,7 +112,7 @@ public class BoardService {
 	//comment 
 	public void cmtWrite(CommentDTO cdto) {
 		// TODO Auto-generated method stub
-		SqlSession session = MySqlSesstionFactory.getSesstion();
+		SqlSession session = MySqlSessionFactory.getSession();
 		try {
 			BoardDAO dao = new BoardDAO();
 			dao.cmtWrite(session,cdto);
@@ -126,7 +124,7 @@ public class BoardService {
 	}
 	public void cmtReply(CommentDTO cdto) {
 		// TODO Auto-generated method stub
-		SqlSession session = MySqlSesstionFactory.getSesstion();
+		SqlSession session = MySqlSessionFactory.getSession();
 		try {
 			BoardDAO dao = new BoardDAO();
 			dao.cmtReply(session,cdto);
@@ -138,7 +136,7 @@ public class BoardService {
 	}
 	public CommentPageDTO cmtList(CommentPageDTO cmtPDTO,String num) {
 		// TODO Auto-generated method stub
-		SqlSession session = MySqlSesstionFactory.getSesstion();
+		SqlSession session = MySqlSessionFactory.getSession();
 		try {
 			BoardDAO dao = new BoardDAO();
 			cmtPDTO = dao.cmtList(session,cmtPDTO,num);

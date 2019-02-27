@@ -18,12 +18,7 @@ import com.dto.MemberDTO;
 public class MainServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MemberDTO dto=new MemberDTO();
-		ArrayList<MemberDTO> list=new ArrayList<>();
-		list.add(dto);
 		
-		HttpSession session=request.getSession();
-		session.setAttribute("dto", dto);
 		RequestDispatcher dis=request.getRequestDispatcher("main.jsp");
 		dis.forward(request, response);
 	}

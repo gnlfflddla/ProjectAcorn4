@@ -20,12 +20,12 @@ public class MySqlSessionFactory {
 		}
 	 sqlSessionFactory =
 		new SqlSessionFactoryBuilder().build(inputStream);
-	}//end static
-	public final static SqlSession getSession() {
+	}
+	public static SqlSession getSession() {
 		return sqlSessionFactory.openSession();
 	}
 	
-}//end class
+}
 
 
 

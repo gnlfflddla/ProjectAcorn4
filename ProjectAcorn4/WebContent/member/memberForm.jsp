@@ -15,7 +15,7 @@
 		var passwd=$("#passwd").val();
 		var passwd1=$("#passwd1").val();
 		var username=$("#username").val();
-		var post=$("#post").val();
+		var post=$("#sample4_postcode").val();
 		var addr1=$("#addr1").val();
 		var addr2=$("#addr2").val();
 		var phone1=$("#phone1").val();
@@ -23,10 +23,10 @@
 		var phone3=$("#phone3").val();
 		var email1=$("#email1").val();
 		var email2=$("#email2").val();
+		//var A_num=$("#A_num").val();
 		
 		var result=$("#result").text();
 		var result4=$("#result4").text();
-		
 		
 		if(userid.length==0){
 			alert("아이디를 입력해주세요.");
@@ -48,11 +48,7 @@
 			alert("이름을 입력해주세요.");
 			$("#username").focus();
 			event.preventDefault();
-		}else if(post.length==0 || addr1.length==0 || addr2.length==0){
-			alert("주소를 입력해주세요.");
-			$("#post").focus();
-			event.preventDefault();
-		}else if(phone1.length==0 || phone2.length==0 || phone3.length==0){
+		}else if(phone2.length==0 ||phone3.length==0){
 			alert("휴대전화번호를 확인해주세요.");
 			$("#phone2").focus();
 			event.preventDefault();
@@ -60,11 +56,19 @@
 			alert("이메일을 확인해주세요.");
 			$("#email1").focus();
 			event.preventDefault();
+		}else if(A_num.length==0){
+			alert("이메일 인증은 필수입니다..");
+			$("#email1").focus();
+			event.preventDefault();
 		}else if(result4!="인증이완료되었습니다."){
 			alert("이메일 인증은 필수입니다..");
 			$("#email1").focus();
 			event.preventDefault();
-		}
+		} else if(post.length==0 || addr1.length==0 || addr2.length==0){
+			alert("주소를 입력해주세요.");
+			$("#sample4_postcode").focus();
+			event.preventDefault();
+		} 
 	 });
 	 
 	 //아이디 중복 확인
@@ -136,7 +140,9 @@
 					email2:$("#email2").val(),
 				},
 				success : function(responseData, status, xhr) {
-				    console.log("success")
+					$("#result5").text("이메일이 발송되었습니다.");
+					$("#result5").css("color","red");
+
 				},
 				error : function(xhr, status, error) {
 					alert("error");
@@ -173,7 +179,7 @@
 }); 
 
 </script>   
-<div>
+
 <form action="MemberAddServlet" method="post">
 <table border='2'>
 <tr>
@@ -211,10 +217,10 @@
 <tr>
 <td>주소*</td>
 <td>
-<input type="text" name="post" id="post" placeholder="우편번호">
+<input type="text" name="post" id="sample4_postcode" placeholder="우편번호">
 <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-<input type="text" name="addr1" id="addr1" placeholder="도로명주소">
-<input type="text" name="addr2" id="addr2" placeholder="지번주소">
+<input type="text" name="addr1" id="sample4_roadAddress" placeholder="도로명주소">
+<input type="text" name="addr2" id="sample4_jibunAddress" placeholder="지번주소">
 <span id="guide" style="color:#999"></span>
 </td>
 </tr>
@@ -248,6 +254,7 @@
 </select>
 <br>
 <button id="num">인증번호</button>
+<span id="result5"></span>
 <div id="num_result" hidden="true">
 <input type="text" name="A_num" id="A_num">
 <button name="check1" id="check1">확인</button>
@@ -261,10 +268,10 @@
 <br>
 <input type="submit" value="회원가입">
 </form>
-<div id="butt">
+<div class="butt">
 <a href="MainServlet"><button>메인으로 돌아가기</button></a>
 </div>
-</div>
+
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.

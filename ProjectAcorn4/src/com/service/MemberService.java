@@ -17,7 +17,8 @@ public class MemberService {
 			
 			MemberDAO dao=new MemberDAO();
 			n=dao.memberAdd(session, dto);
-			//session.commit();
+			session.commit();
+			System.out.println(n);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {

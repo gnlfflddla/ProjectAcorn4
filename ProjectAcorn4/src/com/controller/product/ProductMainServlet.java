@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dto.ProductDTO;
 import com.service.ProductService;
-@WebServlet("/MainServlet")
+@WebServlet("/ProductMainServlet")
 public class ProductMainServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
