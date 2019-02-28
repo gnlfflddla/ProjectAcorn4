@@ -22,10 +22,11 @@
 
 <script>
 
-var mapContainer = document.getElementById('map'),  
-    mapOption = { 
-        center: new daum.maps.LatLng(37.499403, 127.029003), 
-        level: 2 
+var mapContainer = document.getElementById('map');
+
+mapOption = { 
+        center: new daum.maps.LatLng(37.499403, 127.029003), // 지도의 중심좌표
+        level: 2 // 지도의 확대 레벨
     };
 
 var map = new daum.maps.Map(mapContainer, mapOption); 
@@ -81,11 +82,6 @@ var mapTypes = {
 	    
 	}  
 
-
-
-
-
-
 function getInfo() {
     var center = map.getCenter(); 
     
@@ -109,13 +105,6 @@ function getInfo() {
     message += 'ë¶ëìª½ ì¢íë ' + neLatLng.getLat() + ', ' + neLatLng.getLng() + ' ìëë¤';
     
 }
-
-
-
-
-
-
-
 
 
 </script>
