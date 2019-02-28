@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="GoodsMapper">
+
+  <select id="GoodsSelect" parameterType="string" resultType="GoodsDTO">
+  	select gcode, gcategory, gname, gcontent, gprice, gimage
+  	from goods
+  	where
+  	gcategory = #{gcategory}
+
+  </select>
+  
+  <select id = "SangseList" parameterType="string" resultType="GoodsDTO">
+  	select gcode, gcategory, gname, gcontent,gprice,gimage
+  	from goods
+  	where gcode = #{gcode}
+  
+  </select>
+  
+  <select id = "pagingSelect" resultType="GoodsDTO">
+  	select gcode, gcategory, gname, gcontent,gprice,gimage
+  	from goods
+  	
+  </select>
+  
+  <select id = "totalCount" parameterType="string" resultType="int">
+  	select count(*)
+  	from goods
+  	where
+  	gcategory = #{gcategory}
+  </select>
+  
+  <select id = "mainselect" parameterType="string" resultType="GoodsDTO">
+  	  	select gcode, gcategory, gname, gcontent, gprice, gimage
+  	from goods
+    	where
+  	gcategory = #{gcategory}
+  </select>
+	
+	
+	
+</mapper>
