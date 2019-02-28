@@ -7,8 +7,8 @@
 <c:set var="userid" value="${userid}" scope="session"/>
   
 <h3>비밀번호 찾기</h3>
-고객님께서 입력하신 이메일로 임시비밀번호가 전송되었습니다.<br>
-
+<span>고객님께서 입력하신 이메일로 임시비밀번호가 전송되었습니다.<br></span>
+<div>
 <table border='2'>
 <tr>
 <td>이름</td>
@@ -27,7 +27,7 @@ ${userid}
 </tr>
 
 </table>
-
-저희 쇼핑몰을 이용해주셔서 감사합니다.<br><br>
+</div>
+<span>저희 쇼핑몰을 이용해주셔서 감사합니다.<br><br></span>
 
 <a href="MainServlet"><button>확인</button></a><br><br>

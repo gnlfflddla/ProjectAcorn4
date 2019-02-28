@@ -7,8 +7,8 @@
 <c:set var="userid1" value="${userid1}" scope="session"/>
   
 <h3>아이디 찾기</h3>
-고객님께서 입력하신 이메일로 아이디가 전송되었습니다.<br>
-
+<span>고객님께서 입력하신 이메일로 아이디가 전송되었습니다.<br></span>
+<div>
 <table border='2'>
 <tr>
 <td>이름</td>
@@ -27,10 +27,10 @@ ${userid1}
 </tr>
 
 </table>
+</div>
 
 
-
-저희 쇼핑몰을 이용해주셔서 감사합니다.<br><br>
+<span>저희 쇼핑몰을 이용해주셔서 감사합니다.<br><br></span>
 
 <a href="MainServlet"><button>확인</button></a>
 <a href="MemberPWSearchUIServlet"><button>비밀번호찾기</button></a>

@@ -2,9 +2,10 @@
     pageEncoding="UTF-8"%>
 <style>
 	
-	div{
+	div,span{
 	font:Verdana,Dotum,AppleGothic,sans-serif;
 	}
+	
 	table{
 	border-collapse:collapse; 
 	border:0; 

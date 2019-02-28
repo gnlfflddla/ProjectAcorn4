@@ -20,19 +20,14 @@ public class MemberIdSearchServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username=request.getParameter("username").trim();
-		String phone1=request.getParameter("phone1").trim();
-		String phone2=request.getParameter("phone2").trim();
-		String phone3=request.getParameter("phone3").trim();
-		String email1=request.getParameter("email1").trim();
-		String email2=request.getParameter("email2").trim();
+		String[] phone1=request.getParameterValues("phone");
+		String email=request.getParameter("email").trim();
+		String phone=phone1[0]+phone1[1]+phone1[2];
 		
 		MemberDTO dto=new MemberDTO();
 		dto.setUsername(username);
-		dto.setPhone1(phone1);
-		dto.setPhone2(phone2);
-		dto.setPhone3(phone3);
-		dto.setEmail1(email1);
-		dto.setEmail2(email2);
+		dto.setPhone(phone);	
+		dto.setEmail(email);
 		
 		MemberService service=new MemberService();
 		HashMap<String, String> map=service.idSearch(dto);
@@ -50,7 +45,7 @@ public class MemberIdSearchServlet extends HttpServlet {
 			String userid1=map.get("USERID1"); //뒷자리 가린 아이디
 			
 			nextPage="SendMailServlet";
-			request.setAttribute("mailTo", email1+"@"+email2);
+			request.setAttribute("mailTo", email);
 			request.setAttribute("username", username);
 			request.setAttribute("userid", userid);
 			request.setAttribute("userid1", userid1);

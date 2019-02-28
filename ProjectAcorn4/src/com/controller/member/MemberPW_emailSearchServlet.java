@@ -22,16 +22,15 @@ public class MemberPW_emailSearchServlet extends HttpServlet {
 
 		String userid = request.getParameter("userid");
 		String username = request.getParameter("username");
-		String email1 = request.getParameter("email1");
-		String email2 = request.getParameter("email2");
+		String email = request.getParameter("email");
+		
 		
 		String nextPage = "";
 
 		HashMap<String, String> map = new HashMap<>();
 		map.put("userid", userid);
 		map.put("username", username);
-		map.put("email1", email1);
-		map.put("email2", email2);
+		map.put("email", email);
 
 		MemberService service = new MemberService();
 		int n = service.pwSearch_email(map);
@@ -55,7 +54,7 @@ public class MemberPW_emailSearchServlet extends HttpServlet {
 			MemberService service2 = new MemberService();
 			int n2 = service.passwdUpdate(map2);
 
-			request.setAttribute("mailTo", email1 + "@" + email2);
+			request.setAttribute("mailTo", email);
 			request.setAttribute("username", username);
 			request.setAttribute("userid", userid);
 			request.setAttribute("passwd", passwd);

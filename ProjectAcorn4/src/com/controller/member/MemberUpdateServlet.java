@@ -18,6 +18,7 @@ import com.service.MemberService;
 public class MemberUpdateServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		HttpSession session=request.getSession();
 		MemberDTO dto=(MemberDTO)session.getAttribute("login");
 		
@@ -26,20 +27,20 @@ public class MemberUpdateServlet extends HttpServlet {
 		if(dto!=null) {
 		String userid=dto.getUserid();
 		String username=dto.getUsername();
+		String birthday=request.getParameter("birthday");
 		String passwd=request.getParameter("passwd");
 		String post=request.getParameter("post");
 		String addr1=request.getParameter("addr1");
 		String addr2=request.getParameter("addr2");
-		String phone1=request.getParameter("phone1");
-		String phone2=request.getParameter("phone2");
-		String phone3=request.getParameter("phone3");
-		String email1=request.getParameter("email1");
-		String email2=request.getParameter("email2");
+		String [] phone1=request.getParameterValues("phone");
+		String email=request.getParameter("email");
 		String gradeno=dto.getGradeno();
 		String reception=dto.getReception();
 		
-		MemberDTO dto2=new MemberDTO(userid, passwd, username, post, 
-				addr1, addr2, phone1, phone2, phone3, email1, email2, gradeno, reception);
+		String phone=phone1[0]+phone1[1]+phone1[2];
+		
+		MemberDTO dto2=new MemberDTO(userid, passwd, username, birthday, post, 
+					addr1, addr2, phone, email, gradeno, reception);
 		
 		MemberService service=new MemberService();
 		int n=service.update(dto2);

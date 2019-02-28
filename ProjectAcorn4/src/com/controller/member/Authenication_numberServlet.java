@@ -17,9 +17,9 @@ public class Authenication_numberServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String email1 = request.getParameter("email1");
-		String email2 = request.getParameter("email2");
+		String email = request.getParameter("email");
 		String A_num = request.getParameter("A_num");
+		
 		
 		HttpSession session=request.getSession();
 		
@@ -35,11 +35,10 @@ public class Authenication_numberServlet extends HttpServlet {
 			}
 
 			authenication_num = new String(authenication_num2);
+			System.out.println(authenication_num);
 			
-			
-			request.setAttribute("mailTo", email1 + "@" + email2);
+			request.setAttribute("mailTo",email);
 			session.setAttribute("authenication_num", authenication_num);
-			
 			
 			
 			RequestDispatcher dis = request.getRequestDispatcher("SendMailServlet2");
@@ -49,12 +48,8 @@ public class Authenication_numberServlet extends HttpServlet {
 
 			String mesg = "";
 			if (A_num.trim().equals(authenication_num.trim())==true) {
-				System.out.println("A"+A_num);
-				System.out.println("B"+authenication_num);
 				mesg = "인증이완료되었습니다.";
 			}else {
-				System.out.println("AA"+A_num);
-				System.out.println("BB"+authenication_num);
 				mesg="인증번호를 확인해주세요.";
 			}
 			

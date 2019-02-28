@@ -16,6 +16,6 @@ System.out.println(dto);
 </head>
 <body>
 <h1>회원탈퇴가 완료되었습니다.</h1>
-<a href="MainServlet">메인으로 돌아가기</a>
+<a href="MainServlet"><button>메인으로 돌아가기</button></a>
 </body>
 </html>

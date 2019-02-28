@@ -17,7 +17,7 @@ public class MemberService {
 			
 			MemberDAO dao=new MemberDAO();
 			n=dao.memberAdd(session, dto);
-			//session.commit();
+			session.commit();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -94,7 +94,7 @@ public class MemberService {
 		try {
 			MemberDAO dao=new MemberDAO();
 			n=dao.withdrawal(session, map);
-			//session.commit();
+			session.commit();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {

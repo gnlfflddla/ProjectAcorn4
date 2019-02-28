@@ -21,6 +21,18 @@ alert('${mesg}');
 			$("#b").show();
 			$("#a").hide();
 		});
+		
+		//이메일 선택
+		 $("#emailSelect").on("change",function(){
+			 var email=$("#email").val();
+			 var email1=$(this).val();
+			
+			if(email.includes("@")==true){
+				$("#email").val(email+email1);
+			}else{
+				$("#email").val(email+"@"+email1);
+			}
+		 });
 	});
 
 </script>
@@ -48,11 +60,10 @@ alert('${mesg}');
 <tr>
 <td>이메일</td>
 <td>
-<input type="text" name="email1" id="email1">@
-<input type="text" name="email2" id="email2" placeholder="직접입력">
+<input type="email" name="email" id="email">
 <select id="emailSelect">
 <option>--이메일선택--</option>
-<option value="nanver.com">naver.com</option>
+<option value="naver.com">naver.com</option>
 <option value="daum.net">daum.net</option>
 <option value="gmail.com">gmail.com</option>
 </select>
@@ -85,16 +96,14 @@ alert('${mesg}');
 <tr>
 <td>휴대전화</td>
 <td>
-<select name="phone1" id="phone1">
+<select name="phone" id="phone1">
 <option value="010">010</option>
 <option value="011">011</option>
 <option value="016">016</option>
-<option value="017">017</option>
-<option value="019">019</option>
 </select>
 -
-<input type="text" name="phone2" id="phone2">-
-<input type="text" name="phone3" id="phone3">
+<input type="text" name="phone" id="phone1">-
+<input type="text" name="phone" id="phone2">
 </td>
 </tr>
 </table>
