@@ -10,9 +10,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href=MainServlet>
+	<img alt="daemoon" src="images/dae.jpg">
+	</a>
 <h1>회원가입 화면입니다.</h1>
-<jsp:include page="common/top.jsp"></jsp:include>
-<jsp:include page="common/menu.jsp"></jsp:include>
+
 <jsp:include page="member/memberForm.jsp"/>
 </body>
 </html>

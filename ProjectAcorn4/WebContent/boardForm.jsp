@@ -7,9 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="common/top.jsp"></jsp:include>
-<jsp:include page="common/menu.jsp"></jsp:include>
+<div align=right><jsp:include page="common/top.jsp"></jsp:include></div>
+<div><jsp:include page="common/logo.jsp"></jsp:include></div>
+<div><jsp:include page="common/menu.jsp"></jsp:include></div>
+
 <h1>게시판 목록 보기</h1>
-<jsp:include page="board/boardList.jsp"></jsp:include>
+<div align="center"><jsp:include page="board/boardList.jsp"></jsp:include></div>
 </body>
 </html>

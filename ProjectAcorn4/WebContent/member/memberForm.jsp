@@ -8,9 +8,7 @@
  $(document).ready(function(){
 		//비밀번호 정규식
 		var pwJ=/^[A-Za-z0-9]{4,12}$/;
-			$("#main").on("click", function(){
-				location.href="Main";
-			}
+		
 	 //정보 모두 입력.
 	 $("form").on("submit",function(){
 		var userid=$("#userid").val();

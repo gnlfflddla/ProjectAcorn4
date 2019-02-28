@@ -7,8 +7,8 @@
 </head>
 <h1>장바구니</h1>
 <body>
-<jsp:include page="common/top.jsp"></jsp:include>
-<jsp:include page="common/menu.jsp"></jsp:include>
+<div align=right><jsp:include page="common/top.jsp"></jsp:include></div>
+<div><jsp:include page="common/logo.jsp"></jsp:include></div>
 <jsp:include page="/order/productOrderDone.jsp" flush="true"/>
 </body>
 </html>

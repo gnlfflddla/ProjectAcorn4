@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="common/top.jsp"></jsp:include>
-<jsp:include page="common/menu.jsp"></jsp:include>
+<div align=right><jsp:include page="common/top.jsp"></jsp:include></div>
+<div><jsp:include page="common/logo.jsp"></jsp:include></div>
 <h1>비밀번호 찾기 화면입니다.</h1>
 
 <jsp:include page="member/pwSearch.jsp"></jsp:include>

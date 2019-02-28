@@ -70,11 +70,9 @@ function showSlides(n) {
 
 	<div align=right>
 	<jsp:include page="common/top.jsp"></jsp:include></div>
-		<div align="center">
-	<a href=MainServlet>
-	<img alt="daemoon" src="images/dae.jpg">
-	</a>
-	</div>
+	<div><jsp:include page="common/logo.jsp"></jsp:include></div>
+		
+	
 	
 	<jsp:include page="common/menu.jsp"></jsp:include>
 <div class="slideshow-container" >   <!-- style="position: static" -->

@@ -42,7 +42,7 @@ public class BoardFrontController extends HttpServlet {
 		if(com.equals("/list.do")) {
 			command = new BoardListCommand();
 			command.execute(request, response);
-			nextPage="board/boardList.jsp";		//외부 프레임 만들기 전 테스트용 
+			nextPage="boardForm.jsp";	
 		}
 		//글쓰기 폼
 		if(com.equals("/writeui.do")) {
@@ -73,7 +73,7 @@ public class BoardFrontController extends HttpServlet {
 		if(com.equals("/search.do")) {
 			command = new BoardSearchCommand();
 			command.execute(request, response);
-			nextPage="board/boardList.jsp";
+			nextPage="boardForm.jsp";
 		}
 		if(com.equals("/replyui.do")) {
 			command = new BoardReplyUICommand();

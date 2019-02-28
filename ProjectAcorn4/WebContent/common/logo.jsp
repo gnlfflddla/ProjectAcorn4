@@ -7,10 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href=MainServlet>
-	<img alt="daemoon" src="images/dae.jpg">
-	</a>
-<h1>약관 동의 화면입니다.</h1>
-<jsp:include page="member/agreementForm.jsp"/>
+<div align="center">
+	<a href=MainServlet>
+	<img alt="daemoon" src="images/dae.jpg"></a>
+	</div>
 </body>
 </html>
