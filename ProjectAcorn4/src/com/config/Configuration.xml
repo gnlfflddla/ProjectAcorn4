@@ -12,6 +12,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="com.dto.ProductInfoDTO" alias="ProductInfoDTO" />
 		<typeAlias type="com.dto.ProductOrderDTO" alias="ProductOrderDTO" />
 		<typeAlias type="com.dto.MemberDTO" alias="MemberDTO" />
+		<typeAlias type="com.dto.ChoolCheckDTO" alias="ChoolCheckDTO" />
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -30,6 +31,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="com/config/MemberMapper.xml" />
 		<mapper resource="com/config/BoardMapper.xml" />
 		<mapper resource="com/config/CommentMapper.xml" />
+		<mapper resource="com/config/ChoolSeokMapper.xml" />
 	</mappers>
 </configuration>
 

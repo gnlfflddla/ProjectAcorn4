@@ -10,6 +10,7 @@
 </head>
 <body>
 <h1>회원가입 화면입니다.</h1>
+
 <jsp:include page="member/memberForm.jsp"/>
 </body>
 </html>

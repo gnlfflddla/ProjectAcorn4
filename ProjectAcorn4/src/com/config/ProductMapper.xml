@@ -20,6 +20,10 @@
 	<select id="ProductList" resultType="ProductDTO">
 		select*from product
 	</select>
+	<select id="productCategoryList" parameterType="String" resultType="ProductDTO">
+		select*from product 
+		where PCATEGORY = #{gCategory}
+	</select>
 
 	<!-- 상품 색상,사이즈 목록 -->
 	<select id="ProductinfoList" resultType="ProductDTO">

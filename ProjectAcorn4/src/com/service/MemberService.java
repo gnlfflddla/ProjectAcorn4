@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.config.MySqlSessionFactory;
 import com.dao.MemberDAO;
+import com.dto.ChoolCheckDTO;
 import com.dto.MemberDTO;
 
 public class MemberService {
@@ -27,7 +28,18 @@ public class MemberService {
 		
 		return n;
 	}
-	
+	public ChoolCheckDTO choolCheck (String check) {
+		SqlSession session = MySqlSessionFactory.getSession();		
+		MemberDAO dao = new MemberDAO();
+		ChoolCheckDTO dto = null;
+		try {
+			dto=dao.choolCheck(session, check);
+		} finally {
+			session.close();
+		}
+		
+		return dto;
+	}
 	public MemberDTO login(HashMap<String, String> map) {
 		
 		SqlSession session=MySqlSessionFactory.getSession();
@@ -144,6 +156,46 @@ public class MemberService {
 		}finally {
 			session.close();
 		}
+		return n;
+	}
+	public int choolInsert (HashMap<String, String> map) {
+		SqlSession session = MySqlSessionFactory.getSession();		
+		MemberDAO dao = new MemberDAO();
+		int n = 0;
+		try {
+			n=dao.choolInsert(session,map);
+			session.commit();
+		} finally {
+			session.close();
+		}
+		
+		return n;
+	}
+	public int choolUpdate (HashMap<String, String> map) {
+		SqlSession session = MySqlSessionFactory.getSession();		
+		MemberDAO dao = new MemberDAO();
+		int n = 0;
+		try {
+			n=dao.choolUpdate(session,map);
+			session.commit();
+		} finally {
+			session.close();
+		}
+		
+		return n;
+	}
+	
+	public int choolClear (String check) {
+		SqlSession session = MySqlSessionFactory.getSession();		
+		MemberDAO dao = new MemberDAO();
+		int n = 0;
+		try {
+			n=dao.choolClear(session, check);
+			session.commit();
+		} finally {
+			session.close();
+		}
+		
 		return n;
 	}
 }

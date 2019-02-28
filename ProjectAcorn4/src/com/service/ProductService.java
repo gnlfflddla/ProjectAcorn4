@@ -116,6 +116,21 @@ public class ProductService {
 		}
 		return result;
 	}
+
+	public List<ProductDTO> productCategoryList(String gCategory) {
+		// TODO Auto-generated method stub
+		SqlSession session = new MySqlSessionFactory().getSession();
+		List<ProductDTO> list = null;
+		try {
+			ProductDAO dao = new ProductDAO();
+			list = dao.productCategoryList(session,gCategory);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return list;
+	}
 	
 
 }

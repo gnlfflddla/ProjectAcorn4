@@ -7,11 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>회원정보 화면입니다.</h1>
 <jsp:include page="common/top.jsp"></jsp:include>
 <jsp:include page="common/menu.jsp"></jsp:include>
-<jsp:include page="member/mypage.jsp"/>
-<button><a href="MainServlet">메인으로 돌아가기</a></button>
-<button><a href="WithdrawalUIServlet">회원탈퇴</a></button>
+<h1>게시판 목록 보기</h1>
+<jsp:include page="board/boardList.jsp"></jsp:include>
 </body>
 </html>

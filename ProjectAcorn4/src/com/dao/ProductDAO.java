@@ -62,5 +62,11 @@ public class ProductDAO {
 		int result = session.selectOne("ProductMapper.OrderQuantity",pCode);
 		return result;
 	}
+
+	public List<ProductDTO> productCategoryList(SqlSession session, String gCategory) {
+		// TODO Auto-generated method stub
+		List<ProductDTO> list = session.selectList("ProductMapper.productCategoryList",gCategory);
+		return list;
+	}
 	
 }

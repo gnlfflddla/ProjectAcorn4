@@ -4,16 +4,32 @@ import java.util.HashMap;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.dto.ChoolCheckDTO;
 import com.dto.MemberDTO;
 
 public class MemberDAO {
+	public ChoolCheckDTO choolCheck (SqlSession session,String check) {
+		return session.selectOne("ChoolSeokMapper.choolCheck",check);
+	}
+	
+	public int choolInsert (SqlSession session, HashMap<String, String> map) {
+		return session.insert("ChoolSeokMapper.choolInsert", map);
+	}
+	
+	public int choolUpdate (SqlSession session, HashMap<String, String> map) {
+		return session.update("ChoolSeokMapper.choolUpdate", map);
+	}
+	
+	public int choolClear (SqlSession session, String check) {
 
+		return session.update("ChoolSeokMapper.choolClear", check);
+	}
+	
 	public int memberAdd(SqlSession session,MemberDTO dto) {
 		System.out.println(dto);
 		int n=session.insert("MemberMapper.memberAdd",dto);
 		return n;
 	}
-	
 	public MemberDTO login(SqlSession session,HashMap<String, String> map) {
 		MemberDTO dto=session.selectOne("MemberMapper.login",map);
 		return dto;
