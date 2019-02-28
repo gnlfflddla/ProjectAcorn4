@@ -8,7 +8,9 @@
  $(document).ready(function(){
 		//비밀번호 정규식
 		var pwJ=/^[A-Za-z0-9]{4,12}$/;
-		
+			$("#main").on("click", function(){
+				location.href="Main";
+			}
 	 //정보 모두 입력.
 	 $("form").on("submit",function(){
 		var userid=$("#userid").val();
@@ -192,7 +194,7 @@
 </tr>
 
 <tr>
-<td>비빌번호*</td>
+<td>비밀번호*</td>
 <td>
 <input type="password" name="passwd" id="passwd">
 <span id="result2"></span>
@@ -201,7 +203,7 @@
 </tr>
 
 <tr>
-<td>비빌번호 확인*</td>
+<td>비밀번호 확인*</td>
 <td>
 <input type="password" name="passwd1" id="passwd1">
 <span id="result3"></span>
@@ -262,8 +264,8 @@
 </div>
 </td>
 </tr>
-<!-- 비빌번호 확인 질문
-비빌번호 확인 답변 -->
+<!-- 비밀번호 확인 질문
+비밀번호 확인 답변 -->
 </table>
 <br>
 <input type="submit" value="회원가입">

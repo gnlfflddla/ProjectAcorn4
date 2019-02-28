@@ -77,5 +77,11 @@
 	  select * from dual
 	</insert>
 	
+	<!-- seqnum 가져오기 -->
+	<select id="seqnum" resultType="int">
+	  select productcart_seq.nextval
+	  from dual
+	</select>
+	
 	
 </mapper>

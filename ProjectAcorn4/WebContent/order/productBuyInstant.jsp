@@ -28,17 +28,15 @@ $(document).ready(function() {
 </script>
 
 <!-- 멤버정보 가져오기 -->
-
-<c:forEach var="dto" items="${orderList}">
 <form name="myForm" method="get" action="ProductCartOrderDoneServlet">
-<input type="hidden" name="pCode" value="${dto.pCode}">
-<input type="hidden" name="pName" value="${dto.pName}">
-<input type="hidden" name="pPrice" value="${dto.pPrice}">
-<input type="hidden" name="pSize" value="${dto.pSize}">
-<input type="hidden" name="pColor" value="${dto.pColor}">
-<input type="hidden" name="pAmount" value="${dto.pAmount}">
-<input type="hidden" name="pImage" value="${dto.pImage}">
-<input type="hidden" name="orderNum" value="${dto.num}">
+<input type="hidden" name="pCode" value="${buyinstant.pCode}">
+<input type="hidden" name="pName" value="${buyinstant.pName}">
+<input type="hidden" name="pPrice" value="${buyinstant.pPrice}">
+<input type="hidden" name="pSize" value="${buyinstant.pSize}">
+<input type="hidden" name="pColor" value="${buyinstant.pColor}">
+<input type="hidden" name="pAmount" value="${buyinstant.pAmount}">
+<input type="hidden" name="pImage" value="${buyinstant.pImage}">
+<input type="hidden" name="orderNum" value="${buyinstant.num}">
 
 	<table width="80%" cellspacing="0" cellpadding="0">
 		<tr>
@@ -81,24 +79,24 @@ $(document).ready(function() {
 					</tr>
 
 					<tr>
-						<td class="td_default" width="80">${dto.num}</td>
+						<td class="td_default" width="80">${buyinstant.num}</td>
 						<td class="td_default" width="80"><img
-							src="/images/${fn:split(dto.pImage, ',')[0]}" border="0" align="center"
+							src="/images/${fn:split(buyinstant.pImage, ',')[0]}" border="0" align="center"
 							width="80"/></td>
-						<td class="td_default" width="300" style='padding-left: 30px'>${dto.pName}
-							<br> <font size="2" color="#665b5f">[옵션 : 사이즈(${dto.pSize})
-								, 색상(${dto.pColor})]
+						<td class="td_default" width="300" style='padding-left: 30px'>${buyinstant.pName}
+							<br> <font size="2" color="#665b5f">[옵션 : 사이즈(${buyinstant.pSize})
+								, 색상(${buyinstant.pColor})]
 						</font></td>
-						<td class="td_default" align="center" width="110"><fmt:formatNumber value="${dto.pPrice}" type="currency" pattern="###,###,###,###" />원
+						<td class="td_default" align="center" width="110"><fmt:formatNumber value="${buyinstant.pPrice}" type="currency" pattern="###,###,###,###" />원
 						</td>
-						<td class="td_default" align="center" width="90">${dto.pAmount}</td>
+						<td class="td_default" align="center" width="90">${buyinstant.pAmount}</td>
 
 					</tr>
 
 
 					<tr>
 						<td height="30" colspan="4"></td>
-						<td class="td_default" align='right'>총 결제 금액 : <fmt:formatNumber value="${dto.pPrice*dto.pAmount}" type="currency" pattern="###,###,###,###" />원 </td>
+						<td class="td_default" align='right'>총 결제 금액 : <fmt:formatNumber value="${buyinstant.pPrice*buyinstant.pAmount}" type="currency" pattern="###,###,###,###" />원 </td>
 					</tr>
 				</table> <tr>
 			<td>
@@ -295,7 +293,6 @@ $(document).ready(function() {
 			<input type='submit' value='결제하기'>
 		</td>
 	</tr>
-</c:forEach>
 
 </table>
 

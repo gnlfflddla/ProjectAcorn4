@@ -155,4 +155,19 @@ public class ProductCartService {
 		return n;
 	}
 	
+	// seqnum 가져오기
+	public int Seqnum() {
+		SqlSession session = MySqlSessionFactory.getSession();
+		int n = 0;
+		try {
+			ProductCartDAO dao = new ProductCartDAO();
+			n = dao.Seqnum(session);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return n;
+	}
+	
 }

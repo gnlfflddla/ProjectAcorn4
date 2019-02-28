@@ -8,6 +8,8 @@
 </head>
 <body>
 <h1>회원정보 수정 화면입니다.</h1>
+<jsp:include page="common/top.jsp"></jsp:include>
+<jsp:include page="common/menu.jsp"></jsp:include>
 <jsp:include page="member/memberUpdate.jsp"></jsp:include>
 </body>
 </html>

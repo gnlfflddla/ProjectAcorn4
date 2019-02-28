@@ -9,7 +9,7 @@
 
 </head>
 <body>
-	<h1>게시판 목록 보기</h1>
+	
 	<table border="1" class="type10">
 		<tr>
 			<td colspan="5">
