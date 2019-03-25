@@ -18,9 +18,9 @@ public class CmtReplyCommand implements BoardCommand {
 		String content=request.getParameter("content");
 		String repRoot = request.getParameter("repRoot");
 		CommentDTO cdto = new CommentDTO();
-		cdto.setRootnum(Integer.parseInt(rootnum));
-		cdto.setAuthor(author);
-		cdto.setContent(content);
+		cdto.setComment_boardnum(Integer.parseInt(rootnum));
+		cdto.setComment_author(author);
+		cdto.setComment_content(content);
 		cdto.setRepRoot(Integer.parseInt(repRoot));
 		BoardService service = new BoardService();
 		service.cmtReply(cdto);

@@ -42,8 +42,8 @@ public class ProductAddServlet extends HttpServlet {
 		ServletFileUpload upload = new ServletFileUpload(factory);
 		//파일 크기
 		// b -> kb -> mb -> Gb 
-		upload.setFileSizeMax(1024*1024); // 개별 파일최대 크기 1024*1024 -> 1mb
-		upload.setSizeMax(1024*1024*5); // 총 파일 크기 .. 1024*1024*5 -> 5mb
+		upload.setFileSizeMax(-1); // 개별 파일최대 크기 1024*1024 -> 1mb
+		upload.setSizeMax(-1); // 총 파일 크기 .. 1024*1024*5 -> 5mb
 		
 			
 		//Create a progress listener

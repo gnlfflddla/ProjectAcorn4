@@ -17,9 +17,9 @@ public class CmtWriteCommand implements BoardCommand {
 		String author=request.getParameter("comment_author");
 		String content=request.getParameter("comment_content");
 		CommentDTO cdto = new CommentDTO();
-		cdto.setRootnum(Integer.parseInt(rootnum));
-		cdto.setAuthor(author);
-		cdto.setContent(content);
+		cdto.setComment_boardnum(Integer.parseInt(rootnum));
+		cdto.setComment_author(author);
+		cdto.setComment_content(content);
 		BoardService service = new BoardService();
 		service.cmtWrite(cdto);
 		HttpSession session = request.getSession();
