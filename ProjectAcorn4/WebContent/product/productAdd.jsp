@@ -63,10 +63,10 @@ $(document).ready(function() {
 			 event.preventDefault();
 			 alert("상품 내용을 등록하세요.");
 			 $("[name=pContent]").focus();
- 		}else if($("[name=pCategory]").prop("checked")==false){
+ 		}else if($("[name=pCategory]").attr("checked")==false){
 			 event.preventDefault();
 			 alert("상품 카테고리를 선택해주세요."); 
-		}else if($("[name=pSize]").prop("checked")==false){
+		}else if($("[name=pSize]").attr("checked")==false){
 			 event.preventDefault();
 			 alert("상품 사이즈를 선택해주세요.");
 		}else if($("[name=pPrice]").val().length==0){

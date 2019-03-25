@@ -30,7 +30,7 @@
 								<tr>
 									<td>
 								 		<a href="ProductDetailServlet?pCode=${x.pCode}">
-											<img src="/images/${fn:split(x.pImage, ',')[0]}" border="0" align="center" width="200">
+											<img src="images/${fn:split(x.pImage, ',')[0]}" border="0" align="center" width="200">
 										</a>
 									</td>
 								</tr>

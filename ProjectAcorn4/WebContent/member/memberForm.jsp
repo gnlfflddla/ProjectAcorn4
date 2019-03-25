@@ -248,7 +248,7 @@
 <input type="text" name="email2" id="email2" placeholder="직접입력">
 <select id="emailSelect">
 <option>--이메일선택--</option>
-<option value="nanver.com">naver.com</option>
+<option value="naver.com">naver.com</option>
 <option value="daum.net">daum.net</option>
 <option value="gmail.com">gmail.com</option>
 </select>

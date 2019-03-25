@@ -12,6 +12,7 @@ import com.dto.MemberDTO;
 public class MemberService {
 
 	public int memberAdd(MemberDTO dto) {
+		System.out.println("service>>>"+dto);
 		SqlSession session=MySqlSessionFactory.getSession();
 		int n=0;
 		try {
@@ -19,7 +20,6 @@ public class MemberService {
 			MemberDAO dao=new MemberDAO();
 			n=dao.memberAdd(session, dto);
 			session.commit();
-			System.out.println(n);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {

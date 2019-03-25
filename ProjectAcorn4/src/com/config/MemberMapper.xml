@@ -5,9 +5,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="MemberMapper">
 
 	<insert id="memberAdd" parameterType="MemberDTO">
-		<!-- insert into member (userid,passwd,username,post,addr1,addr2, phone1,phone2,phone3,email1,email2,gradeno,reception) 
-			values( #{userid},#{passwd},#{username},#{post},#{addr1},#{addr2}, #{phone1},#{phone2},#{phone3},#{email1},#{email2},#{gradeno},#{reception}) -->
-
 		insert into member(userid,passwd,username,post,addr1,addr2,phone1,phone2,phone3,email1,email2,gradeno,reception)
 		values(#{userid},#{passwd},#{username},#{post},#{addr1},#{addr2},#{phone1},#{phone2},#{phone3},#{email1},#{email2},#{gradeno},#{reception})
 	</insert>

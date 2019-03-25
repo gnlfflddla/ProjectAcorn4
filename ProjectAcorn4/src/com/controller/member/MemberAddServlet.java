@@ -40,6 +40,7 @@ public class MemberAddServlet extends HttpServlet {
 				phone1, phone2, phone3, email1, email2, gradeno, reception);
 		
 		MemberService service=new MemberService();
+		System.out.println("servlet>>>"+dto);
 		
 		int n=service.memberAdd(dto);
 		

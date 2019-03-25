@@ -14,7 +14,7 @@ MemberDTO dto=(MemberDTO)session.getAttribute("login");
 <form action="MemberUpdateServlet" method="post">
 <table border='2'>
 <tr>
-<td>아이디</td>
+<td>아이디</td> 
 <td>
 <%-- <%=dto.getUserid() %> --%>
 ${login.getUserid()}

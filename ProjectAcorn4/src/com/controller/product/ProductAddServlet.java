@@ -165,6 +165,7 @@ public class ProductAddServlet extends HttpServlet {
 	    dto.setpColor(pColor);
 	    dto.setpSize(pSize);
 	    
+	    System.out.println(dto);
 	    ProductService service = new ProductService();    
 	    int n = service.ProductAdd(dto);
 
